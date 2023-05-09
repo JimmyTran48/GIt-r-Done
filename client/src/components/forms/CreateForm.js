@@ -14,6 +14,7 @@ const CreateForm = (props) => {
         <Input
           type='text'
           id='task'
+          maxLength='25'
           labelClass={classes.label}
           inputClass={classes.input}>
           Task Name

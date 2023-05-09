@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //  importing children
 import AddModal from '../layout/AddModal';
 import CreateModal from '../layout/CreateModal';
-
+import TasksContainer from './tasks/TasksContainer';
 //  importing utils
 import Card from '../UI/Card';
 import NavBar from './navbar/NavBar';
@@ -32,14 +32,19 @@ const PostLogin = (props) => {
         />
       )}
       <NavBar
-        createTask={() => {
-          setCreate(true);
-        }}
         addUser={() => {
           setAdd(true);
         }}
       />
-      <Card className={classes.card}></Card>
+      <Card className={classes.card}>
+        <TasksContainer
+          createTask={() => {
+            setCreate(true);
+          }}
+        />
+        <TasksContainer />
+        <TasksContainer />
+      </Card>
     </React.Fragment>
   );
 };

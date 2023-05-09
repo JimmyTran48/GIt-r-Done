@@ -1,0 +1,43 @@
+@import '../../../assests/colors.scss';
+@import '../../../assests/constants.scss';
+
+.card {
+  width: 250px;
+
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: $navy;
+}
+
+.ul {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.h2 {
+  margin-bottom: 5px;
+
+  color: $button-color;
+
+  font-size: 24px;
+  text-align: center;
+}
+
+.div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+
+  margin-right: 8px;
+}
+
+.button:hover {
+  cursor: pointer;
+}

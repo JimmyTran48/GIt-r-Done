@@ -1,0 +1,24 @@
+@import '../../../assests/colors.scss';
+@import '../../../assests/constants.scss';
+.li {
+  list-style: circle;
+  color: white;
+  margin-bottom: 7px;
+}
+
+.button {
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+
+  text-align: left;
+
+  background-color: $lightOrange;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.button:hover {
+  cursor: pointer;
+}

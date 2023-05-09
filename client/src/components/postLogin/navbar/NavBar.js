@@ -13,9 +13,6 @@ const NavBar = (props) => {
         <Button className={classes.button} onClick={props.addUser}>
           Add User
         </Button>
-        <Button className={classes.start} onClick={props.createTask}>
-          Create Task
-        </Button>
       </div>
     </nav>
   );

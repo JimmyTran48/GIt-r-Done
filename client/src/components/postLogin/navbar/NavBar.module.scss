@@ -25,23 +25,11 @@
   color: $gray;
   font-size: 1.25rem;
   background-color: transparent;
-}
 
-.start {
-  width: 8rem;
-  height: 2.5rem;
-  color: $button-color;
-  font-size: 1.25rem;
-  background-color: $navy;
-}
-
-.button,
-.start {
   border: 1px solid transparent;
   border-radius: $button-border-radius;
 }
 
-.button:hover,
-.start:hover {
+.button:hover {
   cursor: pointer;
 }
