@@ -6,12 +6,12 @@ import PreLogin from './src/components/preLogin/PreLogin';
 import PostLogin from './src/components/postLogin/PostLogin';
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  team: state.team,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateUser: (user) => {
-    dispatch(actions.updateUser(user));
+  updateTeam: (team) => {
+    dispatch(actions.updateTeam(team));
   },
 });
 
@@ -28,7 +28,7 @@ const App = (props) => {
     />
   );
 
-  if (props.user) {
+  if (props.team) {
     render = <PostLogin />;
   }
 

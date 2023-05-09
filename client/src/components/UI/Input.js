@@ -9,7 +9,7 @@ const Input = (props) => {
       <input
         id={props.id}
         type={props.type}
-        required={props.required}
+        required
         className={props.inputClass}
         placeholder={props.placeholder}
       />

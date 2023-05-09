@@ -1,15 +1,15 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  user: true,
+  team: true,
 };
 
 const reducers = (state = initialState, action) => {
   switch (action.type) {
-    case types.UPDATE_USER:
+    case types.UPDATE_TEAM:
       return {
         ...state,
-        user: action.payload,
+        team: action.payload,
       };
     default: {
       return state;

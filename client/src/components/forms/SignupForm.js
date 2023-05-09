@@ -9,14 +9,14 @@ import Button from '../UI/Button';
 const SignupForm = (props) => {
   return (
     <React.Fragment>
-      <h2 className={classes.h2}>Create an Account</h2>
+      <h2 className={classes.h2}>Create a Team</h2>
       <form className={classes.form}>
         <Input
           type='text'
           id='username'
           labelClass={classes.label}
           inputClass={classes.input}>
-          USERNAME
+          TEAM NAME
         </Input>
         <Input
           type='password'

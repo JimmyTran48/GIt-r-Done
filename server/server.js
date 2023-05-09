@@ -4,9 +4,8 @@ const app = express();
 
 const PORT = 3000;
 
-app.get('/test', (req, res) => {
-  res.status(200).send('IT WORKS!');
-});
+app.use('/teams', (req, res) => {});
+app.use('/users', (req, res) => {});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

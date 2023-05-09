@@ -1,6 +1,6 @@
 import * as types from '../constants/actionTypes';
 
-export const updateUser = (user) => ({
-  type: types.UPDATE_USER,
-  payload: user,
+export const updateTeam = (team) => ({
+  type: types.UPDATE_TEAM,
+  payload: team,
 });
