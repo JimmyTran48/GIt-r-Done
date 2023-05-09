@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 //  importing children
 import NavBar from './src/components/navbar/NavBar';
@@ -6,6 +7,16 @@ import NavBar from './src/components/navbar/NavBar';
 //  importing utils
 import LoginModal from './src/components/layout/LoginModal';
 import SignupModal from './src/components/layout/SignupModal';
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  updateUser: (user) => {
+    dispatch(actions.updateUser(user));
+  },
+});
 
 const App = () => {
   const [loggingIn, setLoggingIn] = useState(false);
@@ -38,4 +49,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
