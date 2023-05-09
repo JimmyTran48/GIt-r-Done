@@ -1,15 +1,16 @@
 @import '../../assests/colors.scss';
 
 .nav {
-  width: 70%;
+  width: 100%;
   height: 3.5rem;
 
-  margin: 0 auto;
+  margin: 0.25rem auto;
+
+  background-color: transparent;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: space-evenly;
 }
 
 .button {

@@ -13,8 +13,9 @@ const NavBar = (props) => {
         <Button className={classes.button}>Features</Button>
       </div>
       <div>
-        <Button className={classes.button}>Log In</Button>
-        <Button className={classes.start}>Get Started</Button>
+        <Button className={classes.start} onClick={props.login}>
+          Log In
+        </Button>
       </div>
     </nav>
   );

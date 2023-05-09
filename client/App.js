@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+//  importing children
 import NavBar from './src/components/navbar/NavBar';
 
+//  importing utils
+import LoginModal from './src/components/layout/LoginModal';
+
 const App = () => {
-  return <NavBar />;
+  const [loggingIn, setLoggingIn] = useState(true);
+
+  return (
+    <React.Fragment>
+      {loggingIn && (
+        <LoginModal
+          onClose={() => {
+            setLoggingIn(false);
+          }}
+        />
+      )}
+      <NavBar
+        login={() => {
+          setLoggingIn(true);
+        }}
+      />
+    </React.Fragment>
+  );
 };
 
 export default App;
