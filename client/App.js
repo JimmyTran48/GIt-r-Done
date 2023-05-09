@@ -7,8 +7,8 @@ import NavBar from './src/components/navbar/NavBar';
 import LoginModal from './src/components/layout/LoginModal';
 
 const App = () => {
-  const [loggingIn, setLoggingIn] = useState(true);
-
+  const [loggingIn, setLoggingIn] = useState(false);
+  const [signuup, setSignup] = useState(false);
   return (
     <React.Fragment>
       {loggingIn && (

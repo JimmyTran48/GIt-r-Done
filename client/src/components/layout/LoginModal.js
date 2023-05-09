@@ -6,7 +6,11 @@ import LoginForm from '../forms/LoginForm';
 import Modal from '../UI/Modal';
 
 const LoginModal = (props) => {
-  return <Modal onClose={props.onClose}></Modal>;
+  return (
+    <Modal onClose={props.onClose}>
+      <LoginForm />
+    </Modal>
+  );
 };
 
 export default LoginModal;
