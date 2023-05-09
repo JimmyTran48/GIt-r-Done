@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const App = (props) => {
   const [loggingIn, setLoggingIn] = useState(false);
-  const [signup, setSignup] = useState(true);
+  const [signup, setSignup] = useState(false);
 
   let render = (
     <PreLogin
