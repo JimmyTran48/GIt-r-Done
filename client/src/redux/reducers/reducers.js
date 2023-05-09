@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  user: undefined,
+  user: true,
 };
 
 const reducers = (state = initialState, action) => {

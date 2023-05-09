@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 //  importing utils
-import PreLogin from './src/components/beforeLogin/PreLogin';
+import PreLogin from './src/components/preLogin/PreLogin';
+import PostLogin from './src/components/postLogin/PostLogin';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -14,19 +15,24 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const App = () => {
+const App = (props) => {
   const [loggingIn, setLoggingIn] = useState(false);
   const [signup, setSignup] = useState(true);
-  return (
-    <React.Fragment>
-      <PreLogin
-        loggingIn={loggingIn}
-        signup={signup}
-        setLoggingIn={setLoggingIn}
-        setSignup={setSignup}
-      />
-    </React.Fragment>
+
+  let render = (
+    <PreLogin
+      loggingIn={loggingIn}
+      signup={signup}
+      setLoggingIn={setLoggingIn}
+      setSignup={setSignup}
+    />
   );
+
+  if (props.user) {
+    render = <PostLogin />;
+  }
+
+  return <React.Fragment>{render}</React.Fragment>;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
