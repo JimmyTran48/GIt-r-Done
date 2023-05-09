@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 //  importing children
-import NavBar from '../navbar/NavBar';
+import NavBar from './navbar/NavBar';
 
 //  importing utils
 import LoginModal from '../layout/LoginModal';
