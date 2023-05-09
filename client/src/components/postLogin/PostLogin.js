@@ -8,9 +8,12 @@ import CreateModal from '../layout/CreateModal';
 import Card from '../UI/Card';
 import NavBar from './navbar/NavBar';
 
+//  importing styles
+import classes from './PostLogin.module.scss';
+
 const PostLogin = (props) => {
   const [add, setAdd] = useState(false);
-  const [create, setCreate] = useState(true);
+  const [create, setCreate] = useState(false);
 
   return (
     <React.Fragment>
@@ -36,7 +39,7 @@ const PostLogin = (props) => {
           setAdd(true);
         }}
       />
-      <Card></Card>
+      <Card className={classes.card}></Card>
     </React.Fragment>
   );
 };
