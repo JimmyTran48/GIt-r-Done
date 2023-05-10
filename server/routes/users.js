@@ -11,6 +11,8 @@ router.post('/', usersController.createusers, (req, res) => {
   return res.status(200).json(res.locals.storage);
 });
 
-router.patch('/', (req, res) => {});
+router.patch('/', usersController.updateusers, (req, res) => {
+  return res.status(200).json(res.locals.storage);
+});
 
 module.exports = router;

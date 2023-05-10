@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const PostLogin = (props) => {
   const [add, setAdd] = useState(false);
-  const [create, setCreate] = useState(false);
+  const [create, setCreate] = useState(-2);
 
   useEffect(() => {
     const findTeam = async () => {
@@ -35,15 +35,15 @@ const PostLogin = (props) => {
     findTeam();
   }, [props.team]);
 
-  const render = props.users.map((user) => {
+  const render = props.users.map((user, index) => {
     return (
       <TasksContainer
-        createTask={() => {
-          setCreate(true);
+        createTask={(number) => {
+          setCreate(number);
         }}
         user={user}
         key={user._id}
-        id={user._id}
+        id={index}
       />
     );
   });
@@ -60,11 +60,13 @@ const PostLogin = (props) => {
           updateUsers={props.updateUsers}
         />
       )}
-      {create && (
+      {create > -1 && (
         <CreateModal
           onClose={() => {
-            setCreate(false);
+            setCreate(-2);
           }}
+          users={props.users}
+          create={create}
         />
       )}
       <NavBar

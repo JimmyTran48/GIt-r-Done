@@ -35,8 +35,4 @@ teamsController.createTeams = (req, res, next) => {
     });
 };
 
-teamsController.updateTeams = (req, res, next) => {
-  console.log('-----> TEAMS CONTROLLER');
-};
-
 module.exports = teamsController;

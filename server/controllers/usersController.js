@@ -32,6 +32,19 @@ usersController.createusers = (req, res, next) => {
 
 usersController.updateusers = (req, res, next) => {
   console.log('-----> USERS CONTROLLER');
+  console.log('-----> Attempting to Update User');
+
+  const { _id, tasks } = req.body;
+  console.log('tasks', tasks);
+  models.Users.findOneAndUpdate({ _id: _id }, { tasks: tasks }, { new: true })
+    .then((response) => {
+      console.log('----->USER Updated');
+      res.locals.storage = response;
+      return next();
+    })
+    .catch((error) => {
+      return next(error);
+    });
 };
 
 module.exports = usersController;

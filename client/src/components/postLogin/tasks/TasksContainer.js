@@ -22,7 +22,11 @@ const TasksContainer = (props) => {
       <h2 className={classes.h2}>{props.user.firstName}</h2>
       <ul className={classes.ul}>{render}</ul>
       <div className={classes.div}>
-        <Button className={classes.button} onClick={props.createTask}>
+        <Button
+          className={classes.button}
+          onClick={() => {
+            props.createTask(props.id);
+          }}>
           new task
         </Button>
       </div>
