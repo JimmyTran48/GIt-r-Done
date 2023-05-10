@@ -14,9 +14,12 @@ import classes from './PostLogin.module.scss';
 
 const mapStateToProps = (state) => ({
   team: state.team,
+  users: state.users,
 });
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  updateUsers: (users) => dispatch(actions.updateUsers(users)),
+});
 
 const PostLogin = (props) => {
   const [add, setAdd] = useState(false);
@@ -30,6 +33,8 @@ const PostLogin = (props) => {
             setAdd(false);
           }}
           team={props.team}
+          users={props.users}
+          updateUsers={props.updateUsers}
         />
       )}
       {create && (

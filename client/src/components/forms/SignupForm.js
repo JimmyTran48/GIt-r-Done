@@ -23,7 +23,6 @@ const SignupForm = (props) => {
       body: JSON.stringify({
         name: name,
         password: password,
-        users: [],
       }),
     });
 

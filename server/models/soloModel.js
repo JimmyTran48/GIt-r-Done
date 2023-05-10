@@ -19,7 +19,6 @@ const Schema = mongoose.Schema;
 const teamsSchema = new Schema({
   name: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  users: Array,
 });
 
 const Teams = mongoose.mongoose.model('teams', teamsSchema);

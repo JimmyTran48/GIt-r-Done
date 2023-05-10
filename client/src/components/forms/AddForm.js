@@ -29,16 +29,15 @@ const AddForm = (props) => {
 
     if (response.ok) {
       const data = await response.json();
-      const newUsers = [...props.team.users, data];
+      const newUsers = [...props.users];
+      newUsers.push(data);
 
       props.updateUsers(newUsers);
-
       setError(false);
     } else {
       setError(true);
     }
   };
-
   return (
     <React.Fragment>
       <h2 className={classes.h2}>Add User</h2>
