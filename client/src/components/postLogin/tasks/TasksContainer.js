@@ -12,7 +12,7 @@ const TasksContainer = (props) => {
   const render = props.user.tasks.map((task, index) => {
     return (
       <Tasks key={index} id={index}>
-        {task}
+        {task.name}
       </Tasks>
     );
   });

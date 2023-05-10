@@ -29,9 +29,14 @@ const CreateForm = (props) => {
       body: JSON.stringify({ _id: user._id, tasks: newTasks }),
     });
 
+    const updatedUser = await response.json();
+
+    const updatedUsers = props.users.slice();
+    updatedUsers[props.create] = updatedUser;
+
+    props.updateUsers(updatedUsers);
 
     props.onClose();
-    //update entire users state
   };
   return (
     <React.Fragment>

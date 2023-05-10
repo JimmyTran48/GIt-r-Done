@@ -29,6 +29,7 @@ const PostLogin = (props) => {
     const findTeam = async () => {
       const response = await fetch(`/users?team_id=${props.team._id}`);
       const data = await response.json();
+
       props.updateUsers(data);
     };
 
@@ -67,6 +68,7 @@ const PostLogin = (props) => {
           }}
           users={props.users}
           create={create}
+          updateUsers={props.updateUsers}
         />
       )}
       <NavBar
