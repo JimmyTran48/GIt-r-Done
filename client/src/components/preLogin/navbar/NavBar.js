@@ -8,10 +8,7 @@ import classes from './NavBar.module.scss';
 const NavBar = (props) => {
   return (
     <nav className={classes.nav}>
-      <div>
-        <Button className={classes.button}>About</Button>
-        <Button className={classes.button}>Features</Button>
-      </div>
+      <h2 className={classes.h2}>Git 'r Done!</h2>
       <div>
         <Button className={classes.button} onClick={props.signup}>
           Sign Up
