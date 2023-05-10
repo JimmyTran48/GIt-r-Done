@@ -34,6 +34,7 @@ const AddForm = (props) => {
 
       props.updateUsers(newUsers);
       setError(false);
+      props.onClose();
     } else {
       setError(true);
     }

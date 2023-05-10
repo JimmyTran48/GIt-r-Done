@@ -12,6 +12,7 @@ const AddModal = (props) => {
         team={props.team}
         users={props.users}
         updateUsers={props.updateUsers}
+        onClose={props.onClose}
       />
     </Modal>
   );
