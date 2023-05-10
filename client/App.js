@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
+import * as actions from '../client/src/redux/actions/actions';
 //  importing utils
 import PreLogin from './src/components/preLogin/PreLogin';
 import PostLogin from './src/components/postLogin/PostLogin';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
+import * as actions from '../../redux/actions/actions';
 //  importing utils
 import Input from '../UI/Input';
 //  importing styles
@@ -27,13 +27,12 @@ const LoginForm = (props) => {
 
     //search database for team and password
     //send get request to /teams endpoint
-    const team = await fetch(
-      `localhost:3000/teams?name=${name}&password=${password}`
-    );
-    //if team exists
-    if (team) {
-      //use redux to change state of team
-      props.updateTeam(team);
+    console.log('fetching!');
+    const response = await fetch(`/teams?name=${name}&password=${password}`);
+
+    if (response.ok) {
+      const user = await response.json();
+      props.updateTeam(user);
     } else {
       setError(true);
     }

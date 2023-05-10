@@ -28,8 +28,13 @@ module.exports = {
   },
   devServer: {
     proxy: {
-      '/test': {
+      '/teams/**': {
         target: 'http://localhost:3000/',
+        secure: false,
+      },
+      '/users/**': {
+        target: 'http://localhost:3000',
+        secure: false,
       },
     },
   },
