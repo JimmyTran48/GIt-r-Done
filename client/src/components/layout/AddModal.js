@@ -8,7 +8,7 @@ import Modal from '../UI/Modal';
 const AddModal = (props) => {
   return (
     <Modal onClose={props.onClose}>
-      <AddForm />
+      <AddForm team={props.team} />
     </Modal>
   );
 };

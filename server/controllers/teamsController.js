@@ -1,4 +1,3 @@
-const { model } = require('mongoose');
 const models = require('../models/soloModel');
 
 const teamsController = {};

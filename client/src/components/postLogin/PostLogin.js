@@ -29,6 +29,7 @@ const PostLogin = (props) => {
           onClose={() => {
             setAdd(false);
           }}
+          team={props.team}
         />
       )}
       {create && (

@@ -26,7 +26,8 @@ const Teams = mongoose.mongoose.model('teams', teamsSchema);
 
 const usersSchema = new Schema({
   team_id: { type: Schema.Types.ObjectId, ref: 'teams' },
-  name: { type: String, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true, unique: true },
   tasks: Array,
 });
 

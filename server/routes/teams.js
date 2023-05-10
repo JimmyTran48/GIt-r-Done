@@ -15,6 +15,7 @@ router.post('/', teamsController.createTeams, (req, res) => {
 
 router.patch('/', (req, res) => {
   console.log('-----> TEAMS ROUTER');
+  return res.status(200).json(res.locals.storage);
 });
 
 module.exports = router;

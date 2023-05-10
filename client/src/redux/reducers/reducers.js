@@ -2,6 +2,7 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
   team: false,
+  users: [],
 };
 
 const reducers = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const reducers = (state = initialState, action) => {
       return {
         ...state,
         team: action.payload,
+      };
+    case types.UPDATE_USERS:
+      return {
+        ...state,
+        users: action.payload,
       };
     default: {
       return state;
