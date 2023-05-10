@@ -14,7 +14,7 @@ const SignupForm = (props) => {
 
     const name = event.target[0].value;
     const password = event.target[1].value;
-    console.log(name, password);
+
     const response = await fetch('/teams', {
       method: 'POST',
       headers: {
@@ -26,11 +26,11 @@ const SignupForm = (props) => {
         users: [],
       }),
     });
-    console.log(response);
+
     if (response.ok) {
       // setError(false);
       const data = await response.json();
-      console.log(data);
+      props.updateTeam(data);
     } else {
       setError(true);
     }

@@ -3,9 +3,9 @@ const teamsController = require('../controllers/teamsController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', teamsController.findTeams, (req, res) => {
   console.log('-----> TEAMS ROUTER');
-  return res.status(200).json({ test: 'string' });
+  return res.status(200).json(res.locals.storage[0]);
 });
 
 router.post('/', teamsController.createTeams, (req, res) => {

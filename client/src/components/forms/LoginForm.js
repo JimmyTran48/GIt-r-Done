@@ -27,7 +27,6 @@ const LoginForm = (props) => {
 
     //search database for team and password
     //send get request to /teams endpoint
-    console.log('fetching!');
     const response = await fetch(`/teams?name=${name}&password=${password}`);
 
     if (response.ok) {

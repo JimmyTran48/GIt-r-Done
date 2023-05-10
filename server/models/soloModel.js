@@ -17,7 +17,7 @@ mongoose
 const Schema = mongoose.Schema;
 
 const teamsSchema = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   users: Array,
 });

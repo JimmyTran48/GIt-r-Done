@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions/actions';
 //  importing children
 import AddModal from '../layout/AddModal';
 import CreateModal from '../layout/CreateModal';
@@ -10,6 +11,12 @@ import NavBar from './navbar/NavBar';
 
 //  importing styles
 import classes from './PostLogin.module.scss';
+
+const mapStateToProps = (state) => ({
+  team: state.team,
+});
+
+const mapDispatchToProps = (dispatch) => ({});
 
 const PostLogin = (props) => {
   const [add, setAdd] = useState(false);
@@ -35,6 +42,7 @@ const PostLogin = (props) => {
         addUser={() => {
           setAdd(true);
         }}
+        team={props.team}
       />
       <Card className={classes.card}>
         <TasksContainer
@@ -42,11 +50,9 @@ const PostLogin = (props) => {
             setCreate(true);
           }}
         />
-        <TasksContainer />
-        <TasksContainer />
       </Card>
     </React.Fragment>
   );
 };
 
-export default PostLogin;
+export default connect(mapStateToProps, mapDispatchToProps)(PostLogin);

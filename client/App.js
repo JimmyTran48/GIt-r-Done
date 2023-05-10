@@ -25,6 +25,7 @@ const App = (props) => {
       signup={signup}
       setLoggingIn={setLoggingIn}
       setSignup={setSignup}
+      updateTeam={props.updateTeam}
     />
   );
 

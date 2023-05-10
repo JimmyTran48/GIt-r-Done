@@ -22,6 +22,7 @@ const PreLogin = (props) => {
           onClose={() => {
             props.setSignup(false);
           }}
+          updateTeam={props.updateTeam}
         />
       )}
       <NavBar
