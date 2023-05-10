@@ -31,6 +31,7 @@ const LoginForm = (props) => {
     const response = await fetch(`/teams?name=${name}&password=${password}`);
 
     if (response.ok) {
+      setError(false);
       const user = await response.json();
       props.updateTeam(user);
     } else {
