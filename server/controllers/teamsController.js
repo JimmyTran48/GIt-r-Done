@@ -11,6 +11,7 @@ teamsController.findTeams = (req, res, next) => {
       if (!response.length) {
         throw new Error('Wrong TEAM name or password!');
       }
+      console.log('-----> TEAM Found!');
       res.locals.storage = response;
       return next();
     })

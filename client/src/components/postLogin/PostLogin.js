@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions/actions';
 //  importing children
@@ -25,6 +25,29 @@ const PostLogin = (props) => {
   const [add, setAdd] = useState(false);
   const [create, setCreate] = useState(false);
 
+  useEffect(() => {
+    const findTeam = async () => {
+      const response = await fetch(`/users?team_id=${props.team._id}`);
+      const data = await response.json();
+      props.updateUsers(data);
+    };
+
+    findTeam();
+  }, [props.team]);
+
+  const render = props.users.map((user) => {
+    return (
+      <TasksContainer
+        createTask={() => {
+          setCreate(true);
+        }}
+        user={user}
+        key={user._id}
+        id={user._id}
+      />
+    );
+  });
+
   return (
     <React.Fragment>
       {add && (
@@ -50,13 +73,7 @@ const PostLogin = (props) => {
         }}
         team={props.team}
       />
-      <Card className={classes.card}>
-        <TasksContainer
-          createTask={() => {
-            setCreate(true);
-          }}
-        />
-      </Card>
+      <Card className={classes.card}>{render}</Card>
     </React.Fragment>
   );
 };
