@@ -1,3 +1,6 @@
+@import '../../assests/constants.scss';
+@import '../../assests//colors.scss';
+
 .h2 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 52px;
@@ -20,4 +23,18 @@
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   margin-bottom: 5px;
+}
+
+.button {
+  color: white;
+  background-color: $navy;
+
+  border-radius: $button-border-radius;
+  border: 1px solid transparent;
+
+  padding: 3px 5px;
+}
+
+.button:hover {
+  cursor: pointer;
 }

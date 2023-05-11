@@ -6,6 +6,7 @@ import * as actions from '../../redux/actions/actions';
 import classes from './TaskModal.module.scss';
 //  importing utils
 import Modal from '../UI/Modal';
+import Button from '../UI/Button';
 
 const mapStateToProps = (state) => ({
   users: state.users,
@@ -18,6 +19,20 @@ const mapDispatchToProps = (dispatch) => ({
 const TaskModal = (props) => {
   const currentTask = props.users[props.target].tasks[props.view];
 
+  const clickHandler = async () => {
+    // Make copy of state user
+    const newUser = { ...props.users[props.target] };
+    // Make copy of state user.tasks
+    const newTasks = [...newUser.tasks];
+
+    newTasks.splice(props.view, 1);
+
+    newUser.tasks = newTasks;
+    // Update db
+    
+    // Update state
+  };
+
   return (
     <Modal onClose={props.onClose}>
       <h2 className={classes.h2}>{currentTask.name}</h2>
@@ -26,6 +41,9 @@ const TaskModal = (props) => {
         {currentTask.date}
       </h3>
       <p className={classes.p}>{currentTask.description}</p>
+      <Button className={classes.button} onClick={clickHandler}>
+        Complete!
+      </Button>
     </Modal>
   );
 };
