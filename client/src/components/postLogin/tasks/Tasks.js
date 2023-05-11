@@ -8,7 +8,13 @@ import classes from './Tasks.module.scss';
 const Tasks = (props) => {
   return (
     <li className={classes.li}>
-      <Button className={classes.button}>{props.children}</Button>
+      <Button
+        className={classes.button}
+        onClick={() => {
+          props.viewTask(props.id, props.user);
+        }}>
+        {props.children}
+      </Button>
     </li>
   );
 };

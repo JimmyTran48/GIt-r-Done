@@ -12,8 +12,8 @@ const SignupForm = (props) => {
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    const name = event.target[0].value;
-    const password = event.target[1].value;
+    const name = event.target[0].value.trim();
+    const password = event.target[1].value.trim();
 
     const response = await fetch('/teams', {
       method: 'POST',
