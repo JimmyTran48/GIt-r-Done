@@ -27,9 +27,22 @@ const TaskModal = (props) => {
 
     newTasks.splice(props.view, 1);
 
-    newUser.tasks = newTasks;
     // Update db
-    
+    const response = await fetch('/users', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'Application/JSON',
+      },
+      body: JSON.stringify({ _id: newUser._id, tasks: newTasks }),
+    });
+
+    const updatedUser = await response.json();
+
+    const updatedUsers = props.users.slice();
+    updatedUsers[props.target] = updatedUser;
+
+    props.onClose();
+    props.updateUsers(updatedUsers);
     // Update state
   };
 
